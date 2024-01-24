@@ -94,7 +94,6 @@
       </div>
     </section>
 
-    <!-- topics at a glance -->
     <section id="topics">
       <div class="container-md">
         <div class="text-center">
@@ -410,6 +409,7 @@
         </div>
       </div>
     </section>
+    <section class="footer">copy right &copy; 2021</section>
   </div>
 </template>
 
@@ -427,5 +427,11 @@ export default {
 <style scoped>
 section {
   padding: 60px 0;
+}
+
+.footer {
+  /* background-color: #f1f1f1; */
+  text-align: center;
+  padding: 10px;
 }
 </style>
