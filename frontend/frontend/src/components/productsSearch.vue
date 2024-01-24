@@ -54,179 +54,33 @@
         </div>
       </div>
     </nav>
+
     <section id="show-products" class="p-5">
+      <!-- <b-input-group prepend="Search" class="mt-3 mb-5"> -->
+      <b-input-group class="mt-3 mb-5">
+        <b-form-input
+          type="text"
+          v-model="search"
+          placeholder="Search blogs..."
+        ></b-form-input>
+        <!-- <b-input-group-append>
+          <b-button variant="outline-success">Button</b-button>
+          <b-button variant="info">Button</b-button>
+        </b-input-group-append> -->
+      </b-input-group>
       <div>
         <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
+          <div class="col" v-for="(item, index) in filteredBlogs" :key="index">
             <div class="card">
               <img
-                src="/0.jpg"
+                :src="'/' + (index % 4) + '.jpg'"
                 class="card-img-top img-fluid shadow-lg"
                 alt="..."
               />
               <div class="card-body">
-                <h5 class="card-title">{{ product[0].title }}</h5>
-                <p class="card-text">{{ product[0].body }}</p>
-                <router-link v-bind:to="'/products/' + product[0].id">
-                  <b-button variant="primary">Go somewhere</b-button>
-                </router-link>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img
-                src="/1.jpg"
-                class="card-img-top img-fluid shadow-lg"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">{{ product[1].title }}</h5>
-                <p class="card-text">
-                  product name: {{ product[1].title }} {{ product[1].body }}
-                </p>
-                <router-link v-bind:to="'/products/' + product[1].id">
-                  <b-button variant="primary">Go somewhere</b-button>
-                </router-link>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img
-                src="/2.jpg"
-                class="card-img-top img-fluid shadow-lg"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">{{ product[2].title }}</h5>
-                <p class="card-text">{{ product[2].body }}</p>
-                <router-link v-bind:to="'/products/' + product[2].id">
-                  <b-button variant="primary">Go somewhere</b-button>
-                </router-link>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img
-                src="/3.jpg"
-                class="card-img-top img-fluid shadow-lg"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">{{ product[3].title }}</h5>
-                <p class="card-text">{{ product[3].body }}</p>
-                <router-link v-bind:to="'/products/' + product[3].id">
-                  <b-button variant="primary">Go somewhere</b-button>
-                </router-link>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img
-                src="/4.jpg"
-                class="card-img-top img-fluid shadow-lg"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">{{ product[4].title }}</h5>
-                <p class="card-text">
-                  {{ product[4].body }}
-                </p>
-                <router-link v-bind:to="'/products/' + product[4].id">
-                  <b-button variant="primary">Go somewhere</b-button>
-                </router-link>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img
-                src="/0.jpg"
-                class="card-img-top img-fluid shadow-lg"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">{{ product[5].title }}</h5>
-                <p class="card-text">
-                  {{ product[5].body }}
-                </p>
-                <router-link v-bind:to="'/products/' + product[5].id">
-                  <b-button variant="primary">Go somewhere</b-button>
-                </router-link>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img
-                src="/1.jpg"
-                class="card-img-top img-fluid shadow-lg"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">{{ product[6].title }}</h5>
-                <p class="card-text">
-                  {{ product[6].body }}
-                </p>
-                <router-link v-bind:to="'/products/' + product[6].id">
-                  <b-button variant="primary">Go somewhere</b-button>
-                </router-link>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img
-                src="/2.jpg"
-                class="card-img-top img-fluid shadow-lg"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">{{ product[7].title }}</h5>
-                <p class="card-text">
-                  {{ product[7].body }}
-                </p>
-                <router-link v-bind:to="'/products/' + product[6].id">
-                  <b-button variant="primary">Go somewhere</b-button>
-                </router-link>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card">
-              <img
-                src="/0.jpg"
-                class="card-img-top img-fluid shadow-lg"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">{{ product[8].title }}</h5>
-                <p class="card-text">
-                  {{ product[8].body }}
-                </p>
-                <router-link v-bind:to="'/products/' + product[8].id">
-                  <b-button variant="primary">Go somewhere</b-button>
-                </router-link>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img
-                src="/0.jpg"
-                class="card-img-topimg-fluid shadow-lg"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">{{ product[9].title }}</h5>
-                <p class="card-text">
-                  {{ product[9].body }}
-                </p>
-                <router-link v-bind:to="'/products/' + product[9].id">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p class="card-text">{{ item.body }}</p>
+                <router-link v-bind:to="'/products/' + item.id">
                   <b-button variant="primary">Go somewhere</b-button>
                 </router-link>
               </div>

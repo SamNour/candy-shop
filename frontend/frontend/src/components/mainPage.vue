@@ -46,7 +46,10 @@
                 exact
                 >Log in</router-link
               >
-              <router-link class="btn btn-secondary mx-3 btn-md" to="/add" exact
+              <router-link
+                class="btn btn-secondary mx-3 btn-md"
+                to="/login"
+                exact
                 >Add Products</router-link
               >
             </li>

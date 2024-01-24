@@ -8,8 +8,8 @@ app = Flask(__name__)
 app.config.from_object(__name__)  # continuly update the app
 
 # allow all domains #TODO: change to only allow localhost http://localhost:8080
-CORS(app, resources={r"/*": {"origins": "*"}})
-
+# CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app)
 
 def init_db(cursor):
     cursor.execute(
@@ -109,29 +109,37 @@ def single_game(product_id):
                 response_object["product"] = p
                 return response_object["product"]
 
+def fetch_user(username: str, password: str):
+    conn = sqlite3.connect('database.db')  # replace with your SQLite database file
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users WHERE username=? AND password=?", (username, password))
+    user = cursor.fetchone()
+    conn.close()
+    return user is not None
 
 @app.route("/login", methods=["POST"])
 def login():
+    check_db()
     response_object = {"status": "success"}
     if request.method == "POST":
         post_data = request.get_json()
-        print("here are :" + post_data.get("userName") + "  --- " + post_data.get("password"))
-        check_db()
-        if post_data.get("userName") == "admin" and post_data.get("password") == "admin":
-            return jsonify(response_object)
+        username = post_data.get("userName")
+        password = post_data.get("password")
+        user = fetch_user(username, password)
+        if user:
+            response_object["user"] = user
+            response_object["status"] = "success"
         else:
             response_object["status"] = "fail"
-            return jsonify(response_object)
-    
+    return jsonify(response_object)
 
 
-
-@app.route("/singup", methods=["POST"])
+@app.route("/signup", methods=["GET","POST"])
 def signup():
     response_object = {"status": "success", "user": None}
     if request.method == "POST":
         post_data = request.get_json()
-        print("here are :" + post_data.get("userName") + "  --- " + post_data.get("password"))
+        print(post_data.get("userName") + "  --- " + post_data.get("password"))
 
         conn = sqlite3.connect("database.db")
         cursor = conn.cursor()
@@ -165,11 +173,11 @@ def signup():
 
         conn.close()
         check_db()
-        response_object["user"] = post_data.get("userName")
-    
         return jsonify(response_object)
 
+
 def check_db():
+    print("checking db")
     conn = sqlite3.connect("database.db")
     cursor = conn.cursor()
 
@@ -185,6 +193,12 @@ def check_db():
         rows = cursor.fetchall()
         for row in rows:
             print(row)
+    conn.close()
+
+def drop_tables():
+    conn = sqlite3.connect("database.db")
+    cursor = conn.cursor()
+    cursor.execute("DROP TABLE users")
     conn.close()
 
 if __name__ == "__main__":

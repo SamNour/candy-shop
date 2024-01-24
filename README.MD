@@ -12,11 +12,12 @@ $ pipenv install -r requirements.txt
 ```
 
 ## Setting up the Frontend:
+
 ```bash
 # Make sure Node.js is installed
 
 # Navigate to the frontend directory
-$ cd ./frontend/frontend/
+$ cd ./frontend/
 
 # Install project dependencies
 $ npm install
