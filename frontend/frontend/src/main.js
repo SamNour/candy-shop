@@ -5,6 +5,7 @@ import VueRouter from "vue-router";
 import Routes from "./routes";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/js/bootstrap.bundle";
+import VueParticlesBg from "particles-bg-vue";
 
 export const bus = new Vue();
 
@@ -20,6 +21,7 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
+Vue.use(VueParticlesBg);
 
 Vue.config.productionTip = false;
 
