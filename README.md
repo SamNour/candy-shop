@@ -1,3 +1,6 @@
+![image](https://github.com/SamNour/candy-shop/assets/96638051/d5df08f7-caad-43c8-92de-5a4e3d25466a)
+
+
 ## Setting up the Backend:
 
 ```bash
