@@ -1,4 +1,4 @@
-![image](https://github.com/SamNour/candy-shop/assets/96638051/d5df08f7-caad-43c8-92de-5a4e3d25466a)
+<img src="https://github.com/SamNour/candy-shop/assets/96638051/8696071b-e671-45f5-b26d-b2c24c137692" alt="image" style="width:100%;">
 
 
 ## Setting up the Backend:
