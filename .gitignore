@@ -1,0 +1,4 @@
+.vscode
+/backend/Pipfile
+/backend/Pipfile.lock
+TODO.md

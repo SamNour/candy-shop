@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>API Documentation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h2 {
+        color: #333;
+      }
+      pre {
+        background-color: #f0f0f0;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>API Documentation</h1>
+
+    <h2>GET /api/users</h2>
+    <p>Returns a list of all users.</p>
+    <h3>Response</h3>
+    <pre>
+    [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "email": "john@example.com"
+        },
+        {
+            "id": 2,
+            "name": "Jane Doe",
+            "email": "jane@example.com"
+        }
+    ]
+    </pre>
+
+    <h2>GET /api/users/:id</h2>
+    <p>Returns the user with the specified ID.</p>
+    <h3>Response</h3>
+    <pre>
+    {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john@example.com"
+    }
+    </pre>
+
+    <h2>POST /api/users</h2>
+    <p>
+      Creates a new user. The request body should include the user's name and
+      email.
+    </p>
+    <h3>Request</h3>
+    <pre>
+    {
+        "name": "John Doe",
+        "email": "john@example.com"
+    }
+    </pre>
+    <h3>Response</h3>
+    <pre>
+    {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john@example.com"
+    }
+    </pre>
+  </body>
+</html>
