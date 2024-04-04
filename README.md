@@ -1,4 +1,7 @@
 <img src="https://github.com/SamNour/candy-shop/assets/96638051/8696071b-e671-45f5-b26d-b2c24c137692" alt="image" style="width:100%;">
+## LFS
+There is no need to setup the Backend/Frontend (the below steps), all the dependencies and the required files are LFSed. 
+Do follow the below steps only if error occurs in the initial run.
 
 
 ## Setting up the Backend:
