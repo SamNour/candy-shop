@@ -1,4 +1,8 @@
 <img src="https://github.com/SamNour/candy-shop/assets/96638051/8696071b-e671-45f5-b26d-b2c24c137692" alt="image" style="width:100%;">
+
+## About
+The candy store Inspired by the OWASP Juice store is arguably one of the most advanced insecure platforms available! It serves as an invaluable resource for security training training Capture The Flag (CTF) events, and as a testing ground for various security tools! 
+
 ## LFS
 There is no need to setup the Backend/Frontend (the below steps), all the dependencies and the required files are LFSed. 
 Do follow the below steps only if error occurs in the initial run.
